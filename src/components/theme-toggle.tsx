@@ -1,25 +1,24 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { useTheme } from "next-themes";
-
-import { Button } from "~/components/ui/button";
+import { Icons } from "~/components/icons"
+import { Button } from "~/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { Icons } from "~/components/icons";
+} from "~/components/ui/dropdown-menu"
+import { useTheme } from "next-themes"
+import * as React from "react"
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme } = useTheme()
 
   const themes = [
     { name: "Light", value: "light" },
     { name: "Dark", value: "dark" },
     { name: "System", value: "system" },
-  ];
+  ]
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -41,5 +40,5 @@ export function ThemeToggle() {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

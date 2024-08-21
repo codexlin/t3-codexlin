@@ -9,6 +9,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
+    "format":"prettier --write src/**/*",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"

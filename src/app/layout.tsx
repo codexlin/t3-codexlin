@@ -1,12 +1,11 @@
-import "~/styles/globals.css";
-
-import { GeistSans } from "geist/font/sans";
-import { type Metadata, type Viewport } from "next";
-import { Inter as FontSans } from "next/font/google";
-import { cn } from "~/lib/utils";
-import { TRPCReactProvider } from "~/trpc/react";
-import { ThemeProvider } from "~/components/theme-provider";
-import { siteConfig } from "~/config/site";
+import "~/styles/globals.css"
+import { ThemeProvider } from "~/components/theme-provider"
+import { siteConfig } from "~/config/site"
+import { cn } from "~/lib/utils"
+import { TRPCReactProvider } from "~/trpc/react"
+import { GeistSans } from "geist/font/sans"
+import { type Metadata, type Viewport } from "next"
+import { Inter as FontSans } from "next/font/google"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url.base),
@@ -47,28 +46,21 @@ export const metadata: Metadata = {
     creator: "CodexLin",
   },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
-};
+}
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
-};
+}
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+})
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body
-        className={cn(
-          "bg-background min-h-screen font-sans antialiased",
-          fontSans.variable,
-        )}
-      >
+      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -79,5 +71,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
