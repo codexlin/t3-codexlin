@@ -38,9 +38,12 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  dayjs:
+    specifier: ^1.11.13
+    version: 1.11.13
   drizzle-orm:
-    specifier: ^0.30.10
-    version: 0.30.10(@types/react@18.3.4)(@vercel/postgres@0.9.0)(postgres@3.4.4)(react@18.3.1)
+    specifier: ^0.33.0
+    version: 0.33.0(@types/react@18.3.4)(@vercel/postgres@0.9.0)(postgres@3.4.4)(react@18.3.1)
   geist:
     specifier: ^1.3.0
     version: 1.3.1(next@14.2.5)
@@ -2184,6 +2187,10 @@ packages:
       is-data-view: 1.0.1
     dev: true
 
+  /dayjs@1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
+    dev: false
+
   /debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
     peerDependencies:
@@ -2295,8 +2302,8 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.30.10(@types/react@18.3.4)(@vercel/postgres@0.9.0)(postgres@3.4.4)(react@18.3.1):
-    resolution: {integrity: sha512-IRy/QmMWw9lAQHpwbUh1b8fcn27S/a9zMIzqea1WNOxK9/4EB8gIo+FZWLiPXzl2n9ixGSv8BhsLZiOppWEwBw==}
+  /drizzle-orm@0.33.0(@types/react@18.3.4)(@vercel/postgres@0.9.0)(postgres@3.4.4)(react@18.3.1):
+    resolution: {integrity: sha512-SHy72R2Rdkz0LEq0PSG/IdvnT3nGiWuRk+2tXZQ90GVq/XQhpCzu/EFT3V2rox+w8MlkBQxifF8pCStNYnERfA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
@@ -2306,6 +2313,8 @@ packages:
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
       '@planetscale/database': '>=1'
+      '@prisma/client': '*'
+      '@tidbcloud/serverless': '*'
       '@types/better-sqlite3': '*'
       '@types/pg': '*'
       '@types/react': '>=18'
@@ -2320,6 +2329,7 @@ packages:
       mysql2: '>=2'
       pg: '>=8'
       postgres: '>=3'
+      prisma: '*'
       react: '>=18'
       sql.js: '>=1'
       sqlite3: '>=5'
@@ -2339,6 +2349,10 @@ packages:
       '@opentelemetry/api':
         optional: true
       '@planetscale/database':
+        optional: true
+      '@prisma/client':
+        optional: true
+      '@tidbcloud/serverless':
         optional: true
       '@types/better-sqlite3':
         optional: true
@@ -2367,6 +2381,8 @@ packages:
       pg:
         optional: true
       postgres:
+        optional: true
+      prisma:
         optional: true
       react:
         optional: true

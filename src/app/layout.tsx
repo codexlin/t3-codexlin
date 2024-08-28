@@ -1,6 +1,7 @@
 import "~/styles/globals.css"
 import { ThemeProvider } from "~/components/theme-provider"
 import { siteConfig } from "~/config/site"
+import { TabVisibilityProvider } from "~/context/TabVisibilityContext"
 import { cn } from "~/lib/utils"
 import { TRPCReactProvider } from "~/trpc/react"
 import { GeistSans } from "geist/font/sans"
@@ -67,7 +68,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           enableSystem
           disableTransitionOnChange
         >
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            <TabVisibilityProvider>{children}</TabVisibilityProvider>
+          </TRPCReactProvider>
         </ThemeProvider>
       </body>
     </html>

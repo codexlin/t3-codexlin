@@ -1,6 +1,7 @@
 "use client"
 
 import { api } from "~/trpc/react"
+import dayjs from "dayjs"
 import { useState } from "react"
 
 export function LatestPost() {
@@ -18,7 +19,10 @@ export function LatestPost() {
   return (
     <div className="w-full max-w-xs">
       {latestPost ? (
-        <p className="truncate">Your most recent post: {latestPost.name}</p>
+        <>
+          <p className="truncate">{`Your most recent post: ${latestPost.name}`}</p>
+          <p className="truncate">{`CreateTime: ${dayjs(latestPost.createdAt).format("YYYY-MM-DD HH:mm:ss")}`}</p>
+        </>
       ) : (
         <p>You have no posts yet.</p>
       )}
